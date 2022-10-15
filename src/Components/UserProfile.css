@@ -1,0 +1,24 @@
+.image-container{
+    border: 2px solid black;
+    margin: 50px;
+    border-radius: 5px;
+    width: 90%;
+    display: flex;
+    padding: 1%;
+}
+.main-container{
+    border: 2px solid black;
+    padding: 5px;
+}
+.upload-btn{
+}
+.image{
+    width: 100px;
+    height: 100px;
+    display: block;
+}
+
+.loading-icon{
+    margin-top: 2%;
+    margin-left: 2%;
+}

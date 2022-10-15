@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import ProfileForm from './Components/profile-form/ProfileForm';
+import UseReduce from './Components/use-reducer/UseReduce';
+import UserProfile from './Components/UserProfile';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  let [isLogin,setIslogin] = useState(false)
+
+  useEffect(()=>{
+    if(localStorage.getItem('login'==='1')){
+      setIslogin(true)
+    }
+  },[])
+
+  return(
+    <div className='app'>
+      {/* <UserProfile></UserProfile> */}
+      {/* <ProfileForm></ProfileForm> */}
+      {!isLogin && <UseReduce></UseReduce>}
+      {isLogin && <h1>logged in sucessfully</h1>}
+
     </div>
-  );
+  )
 }
 
 export default App;
