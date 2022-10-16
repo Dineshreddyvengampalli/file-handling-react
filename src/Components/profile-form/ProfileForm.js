@@ -21,6 +21,12 @@ function ProfileForm() {
         alert(JSON.stringify(`${res.message}, status: ${res.status}`));
         
     }
+    let showFilesHandler = async()=>{
+        const res = await fetch("http://localhost:3000/show-files", {
+            method : "GET"
+        })
+        await console.log(res)
+    }
     const txt = ` <h3>This is a blog title </h3>
     <p>This is some blog text. There could be <b>bold</b> elements as well as <i>italic</i> elements here! <p>
     <img onerror='alert(\"Hacked!\");' src='invalid-image' />
@@ -34,13 +40,14 @@ function ProfileForm() {
             <input onChange={inputHandler} type='file'></input>
             <button type='submit' onClick={submitHandler}>upload</button>
         </form>
-        <div dangerouslySetInnerHTML={{__html:sanitizedBlog}} >
+        {/* <div dangerouslySetInnerHTML={{__html:sanitizedBlog}} >
         </div>
-        <div dangerouslySetInnerHTML={{__html:image}}>
+        <div dangerouslySetInnerHTML={{__html:image}}> */}
 
             {/* <img onError={<script>alert('error')</script>} ></img> */}
             {/* <img src={url} alt = 'image'></img> */}
-        </div>
+        {/* </div> */}
+        <button onClick={showFilesHandler}>Show files</button>
     </div>
   )
 }

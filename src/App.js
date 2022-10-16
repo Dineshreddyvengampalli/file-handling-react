@@ -16,9 +16,9 @@ function App() {
   return(
     <div className='app'>
       {/* <UserProfile></UserProfile> */}
-      {/* <ProfileForm></ProfileForm> */}
-      {!isLogin && <UseReduce></UseReduce>}
-      {isLogin && <h1>logged in sucessfully</h1>}
+      <ProfileForm></ProfileForm>
+      {/* {!isLogin && <UseReduce></UseReduce>}
+      {isLogin && <h1>logged in sucessfully</h1>} */}
 
     </div>
   )
